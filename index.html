@@ -9,41 +9,85 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Evita scroll */
+            background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+        }
+
+        .main-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        .card-custom {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Proyecto Canvas 2D - Paisaje Nocturno</span>
-        <span class="text-light">Iker Velázquez</span>
-    </div>
-</nav>
+<div class="main-container">
 
-<!-- CONTENIDO -->
-<div class="container-fluid mt-4">
-    <div class="row">
-
-        <!-- Canvas -->
-        <div class="col-md-6 text-center">
-            <h4>Dibujo generado con Canvas</h4>
-            <canvas id="canvas" width="800" height="450"></canvas>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold">Proyecto Canvas 2D</span>
+            <span class="text-light">Iker Velázquez</span>
         </div>
+    </nav>
 
-        <!-- Imagen original -->
-        <div class="col-md-6 text-center">
-            <h4>Imagen original</h4>
-            <img src="assets/img/imagen.png" class="img-fluid shadow rounded">
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="content container-fluid">
+        <div class="row w-100">
+
+            <!-- CANVAS -->
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="card bg-dark text-white text-center p-3 card-custom w-100">
+                    <h4 class="mb-3">🎨 Imagen Dibujada con Canvas</h4>
+                    <canvas id="canvas" width="800" height="450"></canvas>
+                </div>
+            </div>
+
+            <!-- IMAGEN ORIGINAL -->
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="card bg-dark text-white text-center p-3 card-custom w-100">
+                    <h4 class="mb-3">🖼️ Imagen Original de Referencia</h4>
+                    <img src="assets/img/imagen.png" class="img-fluid rounded shadow">
+                </div>
+            </div>
+
         </div>
-
     </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light text-center py-2">
+        © 2026 - Desarrollado por Iker Velázquez
+    </footer>
+
 </div>
 
-<!-- FOOTER -->
-<footer class="bg-dark text-light text-center p-3 mt-4">
-    © 2026 - Desarrollado por Iker Velázquez
-</footer>
-
 <script src="assets/js/main.js"></script>
+
 </body>
 </html>
