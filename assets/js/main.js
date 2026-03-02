@@ -98,48 +98,110 @@ function dibujarCiudad() {
 }
 
 /* =========================
-   PUENTE DETALLADO
+   PUENTE REALISTA DETALLADO
 ========================= */
 function dibujarPuente() {
 
-    ctx.strokeStyle = "#cccccc";
+    ctx.strokeStyle = "#cfcfcf";
+    ctx.fillStyle = "#3e4a5a";
+    ctx.lineWidth = 3;
+
+    // ======================
+    // PLATAFORMA PRINCIPAL
+    // ======================
+    ctx.fillRect(0, 270, canvas.width, 20);
+
+    // Estructura metálica inferior (patrón X)
+    ctx.strokeStyle = "#8892a0";
+    for (let i = 0; i < canvas.width; i += 40) {
+        ctx.beginPath();
+        ctx.moveTo(i, 270);
+        ctx.lineTo(i + 40, 290);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(i + 40, 270);
+        ctx.lineTo(i, 290);
+        ctx.stroke();
+    }
+
+    // ======================
+    // TORRE IZQUIERDA
+    // ======================
+    dibujarTorre(220);
+
+    // ======================
+    // TORRE DERECHA
+    // ======================
+    dibujarTorre(630);
+
+    // ======================
+    // CABLE PRINCIPAL CURVO
+    // ======================
+    ctx.strokeStyle = "#dcdcdc";
     ctx.lineWidth = 4;
 
-    // Base
     ctx.beginPath();
-    ctx.moveTo(0, 260);
-    ctx.lineTo(canvas.width, 260);
+    ctx.moveTo(245, 150);
+    ctx.bezierCurveTo(350, 200, 520, 200, 655, 150);
     ctx.stroke();
 
-    // Torres
-    ctx.fillStyle = "#555";
-    ctx.fillRect(250, 150, 50, 110);
-    ctx.fillRect(600, 150, 50, 110);
-
-    // Cables principales
-    ctx.beginPath();
-    ctx.moveTo(275, 150);
-    ctx.quadraticCurveTo(450, 100, 625, 150);
-    ctx.stroke();
-
-    // Cables verticales
-    for (let i = 275; i <= 625; i += 20) {
+    // ======================
+    // CABLES VERTICALES
+    // ======================
+    ctx.lineWidth = 2;
+    for (let i = 260; i <= 640; i += 20) {
         ctx.beginPath();
-        ctx.moveTo(i, 260);
-        ctx.lineTo(i, 160);
+        ctx.moveTo(i, 270);
+        ctx.lineTo(i, 165 + Math.sin((i - 260) / 380 * Math.PI) * 35);
         ctx.stroke();
+    }
+
+    // ======================
+    // LÁMPARAS DEL PUENTE
+    // ======================
+    for (let i = 40; i < canvas.width; i += 80) {
+        ctx.fillStyle = "#ffd700";
+        ctx.beginPath();
+        ctx.arc(i, 265, 6, 0, Math.PI * 2);
+        ctx.fill();
     }
 }
 
+
 /* =========================
-   FAROLES DEL PUENTE
+   FUNCIÓN PARA DIBUJAR TORRES
 ========================= */
-function dibujarFaroles() {
-    for (let i = 50; i < canvas.width; i += 80) {
-        ctx.fillStyle = "gold";
+function dibujarTorre(x) {
+
+    ctx.fillStyle = "#4f5d75";
+
+    // Columna principal
+    ctx.fillRect(x, 150, 50, 120);
+
+    // Base inferior
+    ctx.fillStyle = "#2f3e50";
+    ctx.fillRect(x - 5, 260, 60, 15);
+
+    // Parte superior
+    ctx.fillStyle = "#6c7a89";
+    ctx.fillRect(x - 5, 130, 60, 20);
+
+    // Estructura interna en X
+    ctx.strokeStyle = "#cfcfcf";
+    ctx.lineWidth = 2;
+
+    for (let y = 160; y < 260; y += 25) {
+
         ctx.beginPath();
-        ctx.arc(i, 250, 6, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.moveTo(x + 5, y);
+        ctx.lineTo(x + 45, y + 25);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(x + 45, y);
+        ctx.lineTo(x + 5, y + 25);
+        ctx.stroke();
     }
 }
 
