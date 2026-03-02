@@ -1,17 +1,31 @@
-# 🚀 Nombre del Proyecto
+# 🎨 Examen1 - Proyecto Canvas 2D
 
-Breve descripción de tu proyecto aquí.  
-Explica en 1 o 2 líneas qué hace tu aplicación y para qué sirve.
+Proyecto académico desarrollado como parte de la evaluación práctica, donde se recrea una imagen de referencia utilizando la API Canvas 2D mediante programación en JavaScript.
+
+La aplicación muestra de manera comparativa:
+
+- 🖼️ Imagen original (referencia)
+- 🎨 Imagen generada mediante código en Canvas
 
 ---
 
-## 📌 Características
+## 🌐 Demo en línea
 
-- ✅ Funcionalidad 1
-- ✅ Funcionalidad 2
-- ✅ Funcionalidad 3
-- 🎨 Diseño moderno y responsivo
-- ⚡ Optimizado para rendimiento
+Puedes ver el proyecto funcionando aquí:
+
+👉 https://TU-USUARIO.github.io/Examen1/
+
+*(Reemplaza TU-USUARIO por tu usuario de GitHub cuando actives GitHub Pages)*
+
+---
+
+## 📌 Objetivo del proyecto
+
+- Aplicar conocimientos de HTML5, CSS3 y JavaScript.
+- Utilizar la API Canvas 2D para dibujar una imagen compleja.
+- Organizar el código por funciones y figuras.
+- Implementar estructura profesional de proyecto.
+- Publicar el sitio mediante GitHub Pages.
 
 ---
 
@@ -19,8 +33,10 @@ Explica en 1 o 2 líneas qué hace tu aplicación y para qué sirve.
 
 - HTML5
 - CSS3
+- Bootstrap 5
 - JavaScript
-- Live Server (para desarrollo)
+- API Canvas 2D
+- Git & GitHub
 
 ---
 
